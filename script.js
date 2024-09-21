@@ -10,14 +10,19 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let roman = '';
 
+    // Iterate over the Roman numeral map
+    for (const { value, numeral } of romanMap) {
+        while (num >= value) {
+            roman += numeral;  
+            num -= value;      
+        }
+    }
+
+    return roman; 
 }
-// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
+ console.log(convertToRoman(14));
+console.log(convertToRoman(798));
 
-// console.log(convertToRoman(36));
-
-
-
-
-// do not edit below this line
 module.exports = convertToRoman
